@@ -9,11 +9,16 @@ Since the model makes use of the bulk, shear modulus and the poisson's ratio, fu
 
 At the bottom of the script you can find some helpful functions for 3D plotting.
 
-In the code the follwing terminology is considered:
+In the code the following terminology is considered:
+
 k: Bulk modulus.
+
 mu (sometimes just m): shear modulus.
+
 v: young's modulus.
+
 r: the radius.
+
 n,l,i : number of the phases or the corresponding phase accordingly.
 
 # For questions and/or collaboration please contact me at oussamamedounissi@gmail.com.
