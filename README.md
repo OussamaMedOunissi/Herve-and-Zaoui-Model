@@ -3,7 +3,7 @@ A python implementation of the Herve and Zaoui analytical model for calculating 
 
 You can find the model's paper at: https://www.sciencedirect.com/science/article/abs/pii/0020722593900594
 
-Almost every function in the code is an implementation of an equations in the paper, with the relevant eqution's number is found in the commecnt right above the function.
+Almost every function in the code is an implementation of an equations in the paper, with the relevant equation's number is found in the commecnt right above the function.
 
 Since the model makes use of the bulk, shear modulus and the poisson's ratio, functions for calculating the bulk and shear modulus from young's modulus and the poisson's ratio in the isotropic case were added at the top of the code.
 
