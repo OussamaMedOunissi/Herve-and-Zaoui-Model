@@ -15,7 +15,9 @@ k: Bulk modulus.
 
 mu (sometimes just m): shear modulus.
 
-v: young's modulus.
+v: poisson's ratio.
+
+e: young's modulus.
 
 r: the radius.
 
