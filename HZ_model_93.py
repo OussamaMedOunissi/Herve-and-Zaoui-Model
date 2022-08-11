@@ -48,7 +48,7 @@ def keff_recu(l,k,mu,r):
     if l == 1:
         return keff(1,k,mu,r)
     else:
-        return keff(1, [keff_ouss(l-1,k,mu,r),k[l]], [mu[l-1],mu[l]], [r[l-1],r[l]])
+        return keff(1, [keff_recu(l-1,k,mu,r),k[l]], [mu[l-1],mu[l]], [r[l-1],r[l]])
 
 # calculates the effective propriety Keff (by homogenizing only 2 phases at a time) (equation 46)
 # ::inputs (l "the number of phases - 1", [k1,k2,...], [mu1,mu2,...], [r1, r2, ...]) and outputs the effective propriety Keff
@@ -57,7 +57,7 @@ def keff_recu_simp(l,k,mu,r):
     if l == 0:
         return k[l]
     else:
-        ke = k[l] + ((r[l-1]**3 / r[l]**3) / ((1/(keff_recu(l-1,k,mu,r)-k[l])) + ((3*(r[l]**3 - r[l-1]**3))/(r[l]**3 * (3*k[l] + 4*mu[l]))) ))
+        ke = k[l] + ((r[l-1]**3 / r[l]**3) / ((1/(keff_recu_simp(l-1,k,mu,r)-k[l])) + ((3*(r[l]**3 - r[l-1]**3))/(r[l]**3 * (3*k[l] + 4*mu[l]))) ))
         return ke
 
 # calculates the effective propriety Keff only for the case of 3 phases (by homogenizing only 2 phases at a time) (equation 47)
@@ -124,7 +124,7 @@ def mueff_recu(l,mu,v,r):
     if l == 1:
         return mueff(1,mu,v,r)
     else:
-        return mueff(1, [mueff_ouss(l-1,mu,v,r),mu[l]], [v[l-1],v[l]], [r[l-1],r[l]])
+        return mueff(1, [mueff_recu(l-1,mu,v,r),mu[l]], [v[l-1],v[l]], [r[l-1],r[l]])
 
 # calculates the effective propriety Mueff (by homogenizing only 2 phases at a time) iteratively
 # ::inputs (l "the number of phases - 1", [mu1,mu2,...], [v1,v2,...], [r1, r2, ...]) and outputs the effective propriety mueff
